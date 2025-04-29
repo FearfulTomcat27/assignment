@@ -1,71 +1,73 @@
+/*
+ * @Date: 2025-04-26 18:36:20
+ * @LastEditors: FearfulTomcat27 1471335448@qq.com
+ * @LastEditTime: 2025-04-27 13:14:51
+ * @FilePath: /shadcn-admin/src/features/tasks/data/data.tsx
+ */
 import {
   IconArrowDown,
   IconArrowRight,
   IconArrowUp,
-  IconCircle,
   IconCircleCheck,
   IconCircleX,
-  IconExclamationCircle,
   IconStopwatch,
 } from '@tabler/icons-react'
 
 export const labels = [
   {
-    value: 'bug',
-    label: 'Bug',
+    value: '数学',
+    label: '数学',
   },
   {
-    value: 'feature',
-    label: 'Feature',
+    value: '英语',
+    label: '英语',
   },
   {
-    value: 'documentation',
-    label: 'Documentation',
+    value: '计算机',
+    label: '计算机',
+  },
+  {
+    value: '物理',
+    label: '物理',
+  },
+  {
+    value: '其他',
+    label: '其他',
   },
 ]
 
 export const statuses = [
   {
-    value: 'backlog',
-    label: 'Backlog',
-    icon: IconExclamationCircle,
-  },
-  {
-    value: 'todo',
-    label: 'Todo',
-    icon: IconCircle,
-  },
-  {
-    value: 'in progress',
-    label: 'In Progress',
+    value: '进行中',
+    label: '进行中',
     icon: IconStopwatch,
   },
   {
-    value: 'done',
-    label: 'Done',
+    value: '已完成',
+    label: '已完成',
     icon: IconCircleCheck,
   },
   {
-    value: 'canceled',
-    label: 'Canceled',
+    value: '已取消',
+    label: '已取消',
     icon: IconCircleX,
   },
 ]
 
 export const priorities = [
   {
-    label: 'Low',
-    value: 'low',
+    label: '低',
+    value: '低',
     icon: IconArrowDown,
   },
   {
-    label: 'Medium',
-    value: 'medium',
+    label: '中',
+    value: '中',
     icon: IconArrowRight,
   },
   {
-    label: 'High',
-    value: 'high',
+    label: '高',
+    value: '高',
     icon: IconArrowUp,
   },
 ]

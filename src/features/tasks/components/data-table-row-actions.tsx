@@ -1,3 +1,9 @@
+/*
+ * @Date: 2025-04-26 18:36:20
+ * @LastEditors: FearfulTomcat27 1471335448@qq.com
+ * @LastEditTime: 2025-04-27 13:20:12
+ * @FilePath: /shadcn-admin/src/features/tasks/components/data-table-row-actions.tsx
+ */
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import { Row } from '@tanstack/react-table'
 import { IconTrash } from '@tabler/icons-react'
@@ -48,13 +54,11 @@ export function DataTableRowActions<TData>({
             setOpen('update')
           }}
         >
-          Edit
+          编辑
         </DropdownMenuItem>
-        <DropdownMenuItem disabled>Make a copy</DropdownMenuItem>
-        <DropdownMenuItem disabled>Favorite</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger>科目</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuRadioGroup value={task.label}>
               {labels.map((label) => (
@@ -72,7 +76,7 @@ export function DataTableRowActions<TData>({
             setOpen('delete')
           }}
         >
-          Delete
+          删除
           <DropdownMenuShortcut>
             <IconTrash size={16} />
           </DropdownMenuShortcut>

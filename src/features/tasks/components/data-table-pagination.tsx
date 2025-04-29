@@ -1,3 +1,9 @@
+/*
+ * @Date: 2025-04-26 18:36:20
+ * @LastEditors: FearfulTomcat27 1471335448@qq.com
+ * @LastEditTime: 2025-04-27 13:07:56
+ * @FilePath: /shadcn-admin/src/features/tasks/components/data-table-pagination.tsx
+ */
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -27,12 +33,14 @@ export function DataTablePagination<TData>({
       style={{ overflowClipMargin: 1 }}
     >
       <div className='text-muted-foreground hidden flex-1 text-sm sm:block'>
-        {table.getFilteredSelectedRowModel().rows.length} of{' '}
-        {table.getFilteredRowModel().rows.length} row(s) selected.
+        选中了{table.getFilteredSelectedRowModel().rows.length} /{' '}
+        {table.getFilteredRowModel().rows.length} 行
+        {/* {table.getFilteredSelectedRowModel().rows.length} of{' '}
+        {table.getFilteredRowModel().rows.length} row(s) selected. */}
       </div>
       <div className='flex items-center sm:space-x-6 lg:space-x-8'>
         <div className='flex items-center space-x-2'>
-          <p className='hidden text-sm font-medium sm:block'>Rows per page</p>
+          <p className='hidden text-sm font-medium sm:block'>每页展示数量</p>
           <Select
             value={`${table.getState().pagination.pageSize}`}
             onValueChange={(value) => {
@@ -52,8 +60,8 @@ export function DataTablePagination<TData>({
           </Select>
         </div>
         <div className='flex w-[100px] items-center justify-center text-sm font-medium'>
-          Page {table.getState().pagination.pageIndex + 1} of{' '}
-          {table.getPageCount()}
+          第 {table.getState().pagination.pageIndex + 1} /{' '}
+          {table.getPageCount()}页
         </div>
         <div className='flex items-center space-x-2'>
           <Button

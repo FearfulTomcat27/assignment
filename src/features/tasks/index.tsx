@@ -1,3 +1,9 @@
+/*
+ * @Date: 2025-04-26 18:36:20
+ * @LastEditors: FearfulTomcat27 1471335448@qq.com
+ * @LastEditTime: 2025-04-26 19:19:19
+ * @FilePath: /shadcn-admin/src/features/tasks/index.tsx
+ */
 import { Header } from '@/components/layout/header'
 import { Main } from '@/components/layout/main'
 import { ProfileDropdown } from '@/components/profile-dropdown'
@@ -24,9 +30,9 @@ export default function Tasks() {
       <Main>
         <div className='mb-2 flex flex-wrap items-center justify-between space-y-2 gap-x-4'>
           <div>
-            <h2 className='text-2xl font-bold tracking-tight'>Tasks</h2>
+            <h2 className='text-2xl font-bold tracking-tight'>已发布作业</h2>
             <p className='text-muted-foreground'>
-              Here&apos;s a list of your tasks for this month!
+              下面是已发布的作业列表，您可以查看、编辑或删除它们。
             </p>
           </div>
           <TasksPrimaryButtons />

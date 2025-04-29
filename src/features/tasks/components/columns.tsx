@@ -1,4 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
+import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
 import { labels, priorities, statuses } from '../data/data'
@@ -34,7 +35,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'id',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Task' />
+      <DataTableColumnHeader column={column} title='作业编号' />
     ),
     cell: ({ row }) => <div className='w-[80px]'>{row.getValue('id')}</div>,
     enableSorting: false,
@@ -43,7 +44,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'title',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Title' />
+      <DataTableColumnHeader column={column} title='作业标题' />
     ),
     cell: ({ row }) => {
       const label = labels.find((label) => label.value === row.original.label)
@@ -61,7 +62,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'status',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Status' />
+      <DataTableColumnHeader column={column} title='状态' />
     ),
     cell: ({ row }) => {
       const status = statuses.find(
@@ -75,9 +76,24 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className='flex w-[100px] items-center'>
           {status.icon && (
-            <status.icon className='text-muted-foreground mr-2 h-4 w-4' />
+            <status.icon
+              className={cn(
+                'mr-2 h-4 w-4',
+                status.value === '进行中' && 'text-blue-500',
+                status.value === '已完成' && 'text-green-500',
+                status.value === '已取消' && 'text-red-500'
+              )}
+            />
           )}
-          <span>{status.label}</span>
+          <span
+            className={cn(
+              status.value === '进行中' && 'text-blue-500',
+              status.value === '已完成' && 'text-green-500',
+              status.value === '已取消' && 'text-red-500'
+            )}
+          >
+            {status.label}
+          </span>
         </div>
       )
     },
@@ -88,7 +104,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'priority',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Priority' />
+      <DataTableColumnHeader column={column} title='优先级' />
     ),
     cell: ({ row }) => {
       const priority = priorities.find(
@@ -102,9 +118,24 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className='flex items-center'>
           {priority.icon && (
-            <priority.icon className='text-muted-foreground mr-2 h-4 w-4' />
+            <priority.icon
+              className={cn(
+                'mr-2 h-4 w-4',
+                priority.value === '高' && 'text-red-500',
+                priority.value === '中' && 'text-yellow-500',
+                priority.value === '低' && 'text-green-500'
+              )}
+            />
           )}
-          <span>{priority.label}</span>
+          <span
+            className={cn(
+              priority.value === '高' && 'text-red-500',
+              priority.value === '中' && 'text-yellow-500',
+              priority.value === '低' && 'text-green-500'
+            )}
+          >
+            {priority.label}
+          </span>
         </div>
       )
     },
