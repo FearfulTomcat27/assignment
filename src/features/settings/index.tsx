@@ -1,3 +1,9 @@
+/*
+ * @Date: 2025-04-26 18:36:20
+ * @LastEditors: FearfulTomcat27 1471335448@qq.com
+ * @LastEditTime: 2025-04-29 14:30:41
+ * @FilePath: /shadcn-admin/src/features/settings/index.tsx
+ */
 import { Outlet } from '@tanstack/react-router'
 import {
   IconBrowserCheck,
@@ -29,10 +35,10 @@ export default function Settings() {
       <Main fixed>
         <div className='space-y-0.5'>
           <h1 className='text-2xl font-bold tracking-tight md:text-3xl'>
-            Settings
+            设置
           </h1>
           <p className='text-muted-foreground'>
-            Manage your account settings and set e-mail preferences.
+            管理您的账户设置和电子邮件偏好。
           </p>
         </div>
         <Separator className='my-4 lg:my-6' />
@@ -51,27 +57,27 @@ export default function Settings() {
 
 const sidebarNavItems = [
   {
-    title: 'Profile',
+    title: '个人资料',
     icon: <IconUser size={18} />,
     href: '/settings',
   },
   {
-    title: 'Account',
+    title: '账户',
     icon: <IconTool size={18} />,
     href: '/settings/account',
   },
   {
-    title: 'Appearance',
+    title: '外观',
     icon: <IconPalette size={18} />,
     href: '/settings/appearance',
   },
   {
-    title: 'Notifications',
+    title: '通知',
     icon: <IconNotification size={18} />,
     href: '/settings/notifications',
   },
   {
-    title: 'Display',
+    title: '显示',
     icon: <IconBrowserCheck size={18} />,
     href: '/settings/display',
   },

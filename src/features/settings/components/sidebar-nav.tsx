@@ -1,3 +1,9 @@
+/*
+ * @Date: 2025-04-26 18:36:20
+ * @LastEditors: FearfulTomcat27 1471335448@qq.com
+ * @LastEditTime: 2025-04-29 14:44:36
+ * @FilePath: /shadcn-admin/src/features/settings/components/sidebar-nav.tsx
+ */
 import { useState, type JSX } from 'react'
 import { useLocation, useNavigate } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
@@ -39,7 +45,7 @@ export default function SidebarNav({
       <div className='p-1 md:hidden'>
         <Select value={val} onValueChange={handleSelect}>
           <SelectTrigger className='h-12 sm:w-48'>
-            <SelectValue placeholder='Theme' />
+            <SelectValue placeholder='选择设置项' />
           </SelectTrigger>
           <SelectContent>
             {items.map((item) => (

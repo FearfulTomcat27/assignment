@@ -1,12 +1,13 @@
 /*
  * @Date: 2025-04-26 18:36:20
  * @LastEditors: FearfulTomcat27 1471335448@qq.com
- * @LastEditTime: 2025-04-29 13:48:44
+ * @LastEditTime: 2025-04-29 14:29:49
  * @FilePath: /shadcn-admin/src/components/profile-dropdown.tsx
  */
 import { Link, useNavigate } from '@tanstack/react-router'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/authStore'
+import { getGravatarUrl } from '@/lib/utils'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import {
@@ -24,6 +25,12 @@ export function ProfileDropdown() {
   const navigate = useNavigate()
   const { user, reset } = useAuthStore((state) => state.auth)
 
+  // 获取用户初始字母，用于头像回退显示
+  const userInitials = user?.email?.substring(0, 2).toUpperCase() || 'UN'
+
+  // 获取用户 Gravatar 头像
+  const avatarUrl = user?.email ? getGravatarUrl(user.email, 80) : ''
+
   const handleLogout = () => {
     reset() // 清除用户登录状态
     toast.success('退出登录成功')
@@ -35,10 +42,11 @@ export function ProfileDropdown() {
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
-            <AvatarImage src='/avatars/01.png' alt='@shadcn' />
-            <AvatarFallback>
-              {user?.email?.substring(0, 2).toUpperCase() || 'UN'}
-            </AvatarFallback>
+            <AvatarImage
+              src={avatarUrl}
+              alt={user?.email?.split('@')[0] || '用户'}
+            />
+            <AvatarFallback>{userInitials}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>

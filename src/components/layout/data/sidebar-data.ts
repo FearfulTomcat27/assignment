@@ -28,19 +28,19 @@ export const sidebarData: SidebarData = {
   },
   teams: [
     {
-      name: 'Shadcn Admin',
+      name: 'Shadcn 后台',
       logo: Command,
       plan: 'Vite + ShadcnUI',
     },
     {
-      name: 'Acme Inc',
+      name: 'Acme 公司',
       logo: GalleryVerticalEnd,
-      plan: 'Enterprise',
+      plan: '企业版',
     },
     {
-      name: 'Acme Corp.',
+      name: 'Acme 集团',
       logo: AudioWaveform,
-      plan: 'Startup',
+      plan: '创业版',
     },
   ],
   navGroups: [
@@ -65,60 +65,60 @@ export const sidebarData: SidebarData = {
       ],
     },
     {
-      title: 'Pages',
+      title: '页面',
       items: [
         {
-          title: 'Auth',
+          title: '认证',
           icon: IconLockAccess,
           items: [
             {
-              title: 'Sign In',
+              title: '登录',
               url: '/sign-in',
             },
             {
-              title: 'Sign In (2 Col)',
+              title: '登录（双列）',
               url: '/sign-in-2',
             },
             {
-              title: 'Sign Up',
+              title: '注册',
               url: '/sign-up',
             },
             {
-              title: 'Forgot Password',
+              title: '忘记密码',
               url: '/forgot-password',
             },
             {
-              title: 'OTP',
+              title: '验证码',
               url: '/otp',
             },
           ],
         },
         {
-          title: 'Errors',
+          title: '错误页面',
           icon: IconBug,
           items: [
             {
-              title: 'Unauthorized',
+              title: '未授权',
               url: '/401',
               icon: IconLock,
             },
             {
-              title: 'Forbidden',
+              title: '禁止访问',
               url: '/403',
               icon: IconUserOff,
             },
             {
-              title: 'Not Found',
+              title: '页面未找到',
               url: '/404',
               icon: IconError404,
             },
             {
-              title: 'Internal Server Error',
+              title: '服务器内部错误',
               url: '/500',
               icon: IconServerOff,
             },
             {
-              title: 'Maintenance Error',
+              title: '系统维护中',
               url: '/503',
               icon: IconBarrierBlock,
             },
@@ -127,41 +127,41 @@ export const sidebarData: SidebarData = {
       ],
     },
     {
-      title: 'Other',
+      title: '其他',
       items: [
         {
-          title: 'Settings',
+          title: '设置',
           icon: IconSettings,
           items: [
             {
-              title: 'Profile',
+              title: '个人资料',
               url: '/settings',
               icon: IconUserCog,
             },
             {
-              title: 'Account',
+              title: '账户',
               url: '/settings/account',
               icon: IconTool,
             },
             {
-              title: 'Appearance',
+              title: '外观',
               url: '/settings/appearance',
               icon: IconPalette,
             },
             {
-              title: 'Notifications',
+              title: '通知',
               url: '/settings/notifications',
               icon: IconNotification,
             },
             {
-              title: 'Display',
+              title: '显示',
               url: '/settings/display',
               icon: IconBrowserCheck,
             },
           ],
         },
         {
-          title: 'Help Center',
+          title: '帮助中心',
           url: '/help-center',
           icon: IconHelp,
         },
